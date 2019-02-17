@@ -58,7 +58,7 @@ RUN set -ex \
 		libjpeg-turbo-dev \
 		libpng-dev \	
 	&& docker-php-ext-configure gd --with-png-dir=/usr --with-jpeg-dir=/usr \
-	&& docker-php-ext-install gd zip redis \
+	&& docker-php-ext-install gd zip redis gettext \
 	&& runDeps="$( \
 		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local/lib/php/extensions \
 			| tr ',' '\n' \
